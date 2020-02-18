@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "me.ora"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE.txt' // picks the JavaMail license file
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
+    implementation 'com.chootdev:csnackbar:1.4.2'
+    implementation'org.jsoup:jsoup:1.12.1'
+    implementation 'com.sun.mail:android-mail:1.5.5'
+    implementation 'com.sun.mail:android-activation:1.5.5'
+
+
+    implementation "com.itextpdf:barcodes:7.1.9"
+    implementation "com.itextpdf:font-asian:7.1.9"
+    implementation "com.itextpdf:forms:7.1.9"
+    implementation "com.itextpdf:hyph:7.1.9"
+    implementation "com.itextpdf:io:7.1.9"
+    implementation "com.itextpdf:kernel:7.1.9"
+    implementation "com.itextpdf:layout:7.1.9"
+    implementation "com.itextpdf:pdfa:7.1.9"
+    implementation "com.itextpdf:sign:7.1.9"
+    implementation "com.itextpdf:styled-xml-parser:7.1.9"
+    implementation "com.itextpdf:svg:7.1.9"
+    implementation 'com.itextpdf:html2pdf:2.1.6'
+    implementation 'com.itextpdf:itext7-core:7.1.9'
+
+}
