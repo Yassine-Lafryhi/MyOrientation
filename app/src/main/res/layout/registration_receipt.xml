@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/report_presentation" />
+
+
+    <TextView
+        android:id="@+id/Alert"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="-60dp"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+
+    <RelativeLayout
+        android:id="@+id/FirstPlayerPart"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/start"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/FirstPlayerName"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logout_button"
+            android:elevation="4dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="Registration Receipt"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="28dp" />
+
+
+        <TextView
+            android:id="@+id/FirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FirstPlayerName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <TextView
+            android:id="@+id/LastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FirstName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <TextView
+            android:id="@+id/CIN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LastName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <TextView
+            android:id="@+id/CNE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CIN"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <TextView
+            android:id="@+id/Etablissement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CIN"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+
+        <TextView
+            android:id="@+id/BirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Etablissement"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+
+        <TextView
+            android:id="@+id/BacGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/BirthDate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <TextView
+            android:id="@+id/BacDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/BacGrade"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/Sector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/BacDate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <TextView
+            android:id="@+id/Phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Sector"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Phone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Phone Number :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <Button
+            android:id="@+id/Validate"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/Email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/logout_button"
+            android:elevation="4dp"
+            android:text="Print"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="26dp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

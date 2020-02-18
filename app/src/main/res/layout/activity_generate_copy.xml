@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Layout"
+    tools:context=".GenerateCopy">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:id="@+id/scroll"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00EC9EC2">
+<TextView
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:id="@+id/header"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    android:text="Reçu d'Inscription"
+    android:textColor="#000"
+    android:textSize="36dp"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/my_border">
+
+</TextView>
+            <TextView
+                android:id="@+id/Nom"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/header"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="Nom :"
+                android:textColor="#000000"
+                android:textSize="18dp">
+
+            </TextView>
+
+            <TextView
+        android:id="@+id/nomGenereted"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+                android:layout_below="@+id/header"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:layout_alignParentRight="true"
+        android:textSize="18dp"
+
+        />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Prenom"
+                android:text="Prenom :"
+                android:layout_below="@+id/Nom"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                >
+
+            </TextView>
+            <TextView
+                android:id="@+id/prenomGenereted"
+                android:layout_width="240dp"
+
+                android:layout_height="match_parent"
+                android:layout_below="@id/nomGenereted"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Cin"
+                android:text="CIN :"
+                android:layout_below="@+id/Prenom"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                >
+
+            </TextView>
+            <TextView
+                android:id="@+id/cinGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/prenomGenereted"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                 android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/Cne"
+            android:text="CNE :"
+            android:layout_below="@+id/Cin"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:gravity="center"
+            >
+
+        </TextView>
+            <TextView
+                android:id="@+id/cneGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/cinGenereted"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Etablissement"
+                android:text="Etablissement"
+                android:layout_below="@+id/Cne"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                >
+
+            </TextView>
+            <TextView
+                android:id="@+id/etablissementGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/cneGenereted"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/DateNaissance"
+                android:text="Date Naissance"
+                android:layout_below="@+id/Etablissement"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                >
+
+            </TextView>
+            <TextView
+                android:id="@+id/datenaissanceGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/etablissementGenereted"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/NOteBac"
+                android:text="Note du Bac"
+                android:layout_below="@+id/DateNaissance"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+                android:id="@+id/notebacGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/datenaissanceGenereted"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/DateBac"
+                android:text="Date du Bac"
+                android:layout_below="@+id/NOteBac"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+                android:id="@+id/datebacGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/notebacGenereted"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Filiere"
+                android:text="Filiére"
+                android:layout_below="@+id/DateBac"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+                android:id="@+id/filiereGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/datebacGenereted"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Tel"
+                android:text="Telephone :"
+                android:layout_below="@+id/Filiere"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+                android:id="@+id/telGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/filiereGenereted"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Email"
+                android:text="Email :"
+                android:layout_below="@+id/Tel"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="18dp"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+                android:id="@+id/emailGenereted"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/telGenereted"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="18dp"
+
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/imprimer"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/logout_button"
+        android:elevation="4dp"
+        android:text="Imprimer"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textSize="26dp" />
+</RelativeLayout>
