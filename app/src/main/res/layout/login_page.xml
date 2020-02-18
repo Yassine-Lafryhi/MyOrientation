@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".Login">
+
+    <ImageView
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/logo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/graduation" />
+
+
+    <TextView
+        android:id="@+id/Alert"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-60dp"
+        android:elevation="8dp"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+
+    <RelativeLayout
+        android:elevation="8dp"
+        android:id="@+id/FirstPlayerPart"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/start">
+
+        <TextView
+            android:id="@+id/FirstPlayerName"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logout_button"
+            android:elevation="4dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="Log In"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="28dp" />
+
+
+        <TextView
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:id="@+id/Infos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FirstPlayerName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Hi dear teacher/student if this is your first loging in to the application, please use your Massar code as an email, and your CIN as password, after signing in you must change the password !"
+            android:textColor="#E91E63"
+            android:textSize="14dp" />
+
+
+
+
+        <TextView
+            android:id="@+id/EmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Infos"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Email :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/EmailText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/input"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:hint="Please enter your email here"
+            android:text="mabrouk.a@ucd.ac.ma"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/PasswordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Password :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <EditText
+            android:inputType="textPassword"
+            android:elevation="2dp"
+            android:id="@+id/Password"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/PasswordText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/input"
+            android:hint="Please enter your password here"
+            android:text="mabrouk#123"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/LogIn"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/Password"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/logout_button"
+            android:elevation="4dp"
+            android:text="Log In"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="26dp" />
+
+        <Button
+            android:id="@+id/Forget"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/LogIn"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/logout_button"
+            android:elevation="4dp"
+            android:text="Forget Password"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="26dp" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".Login">
+
+    <ImageView
+        android:layout_marginTop="8dp"
+        android:id="@+id/logo"
+        android:layout_width="1600dp"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_transparent"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+       android:gravity="center"
+        android:padding="6dp"
+        android:elevation="8dp"
+        android:id="@+id/Menu1"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/start">
+
+        <TextView
+            android:id="@+id/Chart1"
+            android:layout_alignParentTop="true"
+            android:layout_width="320dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:elevation="4dp"
+            android:enabled="false"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Nombre des étudiants/filière"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="22dp" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:layout_below="@id/Chart1"
+            android:id="@+id/piechart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:gravity="center"
+        android:padding="6dp"
+        android:elevation="8dp"
+        android:id="@+id/Menu2"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/Menu1"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/start">
+
+        <TextView
+            android:id="@+id/Chart2"
+            android:layout_alignParentTop="true"
+            android:layout_width="320dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:enabled="false"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Nombre des étudiants/filière"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="22dp" />
+
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_below="@id/Chart2"
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+<!--
+    <RelativeLayout
+        android:gravity="center"
+        android:padding="6dp"
+        android:elevation="8dp"
+        android:id="@+id/Menu3"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/Menu2"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/start">
+
+        <TextView
+            android:id="@+id/Chart3"
+            android:layout_alignParentTop="true"
+            android:layout_width="320dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:enabled="false"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Students Statistics"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="22dp" />
+
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:layout_below="@id/Chart3"
+            android:id="@+id/LineChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:gravity="center"
+        android:padding="6dp"
+        android:elevation="8dp"
+        android:id="@+id/Menu4"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/Menu3"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/start">
+
+        <TextView
+            android:id="@+id/Chart4"
+            android:layout_alignParentTop="true"
+            android:layout_width="320dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:enabled="false"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Students Statistics"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="22dp" />
+
+
+        <com.github.mikephil.charting.charts.RadarChart
+            android:layout_below="@id/Chart4"
+            android:id="@+id/RadarChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+-->
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

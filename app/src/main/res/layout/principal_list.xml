@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".Login">
+
+    <ImageView
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/logo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/marketing_1" />
+
+
+    <TextView
+        android:id="@+id/Alert"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-60dp"
+        android:elevation="8dp"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+
+    <RelativeLayout
+        android:elevation="8dp"
+        android:id="@+id/FirstPlayerPart"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/start">
+
+        <TextView
+            android:id="@+id/FirstPlayerName"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/logout_button"
+            android:elevation="4dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="Liste Principale"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="28dp" />
+
+
+        <TextView
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:id="@+id/Infos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/FirstPlayerName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Hi dear student, if this is your first loging in to the application, please use your by uppercase, after signing in you must change it"
+            android:textColor="#E91E63"
+            android:textSize="14dp" />
+
+
+
+
+
+
+        <TextView
+            android:padding="6dp"
+            android:id="@+id/nomEtablissement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Infos"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Veuillez sélectionner la filière :"
+            android:textColor="#009688"
+            android:textSize="24dp" />
+
+
+
+        <TextView
+            android:id="@+id/EmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nomEtablissement"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Veuillez sélectionner la filière :"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+        <Spinner
+            android:id="@+id/filiereAdmin"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:elevation="2dp"
+            android:background="@drawable/input"
+            android:layout_below="@id/EmailText"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:selectAllOnFocus="true"
+            android:text="Etablissement"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="20sp" />
+
+
+
+
+        <Button
+            android:id="@+id/ouvrir_pdf"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/filiereAdmin"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/logout_button"
+            android:elevation="4dp"
+            android:text="Imprimer Le PDF"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="26dp" />
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
