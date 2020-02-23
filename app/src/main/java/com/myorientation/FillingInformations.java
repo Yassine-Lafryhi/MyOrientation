@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import android.content.Context;
 import android.content.Intent;
@@ -95,15 +95,15 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
                 EditText[] arrayOfEditTexts = {editTextNom, editTextPrenom, editTextCin, editTextCne, editTextEtablissement, editTextDateNaissance, editTextNoteBac, editTextDateBac, editTextFiliere, editTextTel, editTextEmail};
 
                 if (editTextNom.getText().toString().isEmpty() || editTextPrenom.getText().toString().isEmpty() || editTextCin.getText().toString().isEmpty() || editTextCne.getText().toString().isEmpty() || editTextDateNaissance.getText().toString().isEmpty() || editTextNoteBac.getText().toString().isEmpty() || editTextDateBac.getText().toString().isEmpty() || editTextTel.getText().toString().isEmpty() || editTextTel.getText().toString().isEmpty())
-               Snackbar.with(FillingInformations.this,null)
-                 .type(Type.ERROR)
-                 .message("Quelque informations manquantes ! faites attention!! ")
-                 .duration(Duration.LONG)
-                 .fillParent(true)
-                 .textAlign(Align.LEFT)
-                 .show();
+                    Snackbar.with(FillingInformations.this, null)
+                            .type(Type.ERROR)
+                            .message("Quelque informations manquantes ! faites attention!! ")
+                            .duration(Duration.LONG)
+                            .fillParent(true)
+                            .textAlign(Align.LEFT)
+                            .show();
 
-                   // showSnackBar("Please fill in all the blanks correctly !", "#FFC107", 1500);
+                    // showSnackBar("Please fill in all the blanks correctly !", "#FFC107", 1500);
 
 
                 else {
@@ -147,7 +147,7 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
 
                     } catch (SQLException e) {
                         e.printStackTrace();
-                        showSnackBar(e.getErrorCode()+"", "#FFC107", 1500);
+                        showSnackBar(e.getErrorCode() + "", "#FFC107", 1500);
 
                     }
 

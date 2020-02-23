@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -34,9 +34,10 @@ public class GenerateCopy extends AppCompatActivity {
     File folder;
     File file;
     File filePath;
-    TextView tvNom,tvPrenom , tvCin , tvCne, tvEtablissement, tvDateNaissance , tvNoteBac , tvDateBac, tvFiliere, tvTel ,tvEmail;
+    TextView tvNom, tvPrenom, tvCin, tvCne, tvEtablissement, tvDateNaissance, tvNoteBac, tvDateBac, tvFiliere, tvTel, tvEmail;
     private String signature_pdf_;
     String fileName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,20 +70,7 @@ public class GenerateCopy extends AppCompatActivity {
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        clickButton.setOnClickListener( new View.OnClickListener() {
+        clickButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -92,39 +80,37 @@ public class GenerateCopy extends AppCompatActivity {
                 viewPdf(fileName);
             }
         });
-        tvNom=(TextView)findViewById(R.id.nomGenereted);
+        tvNom = (TextView) findViewById(R.id.nomGenereted);
         tvNom.setText(getIntent().getStringExtra("nom"));
-        tvPrenom=(TextView)findViewById(R.id.prenomGenereted);
+        tvPrenom = (TextView) findViewById(R.id.prenomGenereted);
         tvPrenom.setText(getIntent().getStringExtra("prenom"));
-        tvCin=(TextView)findViewById(R.id.cinGenereted);
+        tvCin = (TextView) findViewById(R.id.cinGenereted);
         tvCin.setText(getIntent().getStringExtra("cin"));
-        tvCne=(TextView)findViewById(R.id.cinGenereted);
+        tvCne = (TextView) findViewById(R.id.cinGenereted);
         tvCin.setText(getIntent().getStringExtra("cin"));
-        tvCne=(TextView)findViewById(R.id.cneGenereted);
+        tvCne = (TextView) findViewById(R.id.cneGenereted);
         tvCne.setText(getIntent().getStringExtra("cne"));
-        tvEtablissement=(TextView)findViewById(R.id.etablissementGenereted);
+        tvEtablissement = (TextView) findViewById(R.id.etablissementGenereted);
 
         String eta = getIntent().getStringExtra("etablissement");
         tvEtablissement.setText(eta);
-        tvDateNaissance=(TextView)findViewById(R.id.datenaissanceGenereted);
+        tvDateNaissance = (TextView) findViewById(R.id.datenaissanceGenereted);
         tvDateNaissance.setText(getIntent().getStringExtra("datenaissance"));
-        tvCne=(TextView)findViewById(R.id.cneGenereted);
+        tvCne = (TextView) findViewById(R.id.cneGenereted);
         tvCne.setText(getIntent().getStringExtra("cne"));
-        tvNoteBac=(TextView)findViewById(R.id.notebacGenereted);
+        tvNoteBac = (TextView) findViewById(R.id.notebacGenereted);
         tvNoteBac.setText(getIntent().getStringExtra("notebac"));
-        tvDateBac=(TextView)findViewById(R.id.datebacGenereted);
+        tvDateBac = (TextView) findViewById(R.id.datebacGenereted);
         tvDateBac.setText(getIntent().getStringExtra("datebac"));
-        tvFiliere=(TextView)findViewById(R.id.filiereGenereted);
+        tvFiliere = (TextView) findViewById(R.id.filiereGenereted);
         String fil = getIntent().getStringExtra("filiere");
         tvFiliere.setText(fil);
-        tvTel=(TextView)findViewById(R.id.telGenereted);
+        tvTel = (TextView) findViewById(R.id.telGenereted);
         tvTel.setText(getIntent().getStringExtra("tel"));
-        tvEmail=(TextView)findViewById(R.id.emailGenereted);
+        tvEmail = (TextView) findViewById(R.id.emailGenereted);
         tvEmail.setText(getIntent().getStringExtra("email"));
 
     }
-
-
 
 
     private void takeScreenShot() {
@@ -136,7 +122,7 @@ public class GenerateCopy extends AppCompatActivity {
             boolean success = folder.mkdir();
         }
 
-         path = folder.getAbsolutePath();
+        path = folder.getAbsolutePath();
 
         fileName = String.valueOf(System.currentTimeMillis());
 
@@ -144,9 +130,9 @@ public class GenerateCopy extends AppCompatActivity {
         path = path + "/" + signature_pdf_ + fileName + ".pdf";// path where pdf will be stored
 
         View u = findViewById(R.id.scroll);
-       ScrollView z = (ScrollView) findViewById(R.id.scroll); // parent view
-       int  totalHeight = z.getChildAt(0).getHeight();// parent view height
-      int   totalWidth = z.getChildAt(0).getWidth();// parent view width
+        ScrollView z = (ScrollView) findViewById(R.id.scroll); // parent view
+        int totalHeight = z.getChildAt(0).getHeight();// parent view height
+        int totalWidth = z.getChildAt(0).getWidth();// parent view width
 
         //Save bitmap to  below path
         String extr = Environment.getExternalStorageDirectory() + "/Signature/";
@@ -177,7 +163,7 @@ public class GenerateCopy extends AppCompatActivity {
 
     public Bitmap getBitmapFromView(View view, int totalHeight, int totalWidth) {
 
-        Bitmap returnedBitmap = Bitmap.createBitmap(totalWidth,totalHeight , Bitmap.Config.ARGB_8888);
+        Bitmap returnedBitmap = Bitmap.createBitmap(totalWidth, totalHeight, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(returnedBitmap);
         Drawable bgDrawable = view.getBackground();
         if (bgDrawable != null)
@@ -187,42 +173,44 @@ public class GenerateCopy extends AppCompatActivity {
         view.draw(canvas);
         return returnedBitmap;
     }
-    private void createPdf(){
 
-            PdfDocument document = new PdfDocument();
+    private void createPdf() {
 
-            PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(b.getWidth(), b.getHeight(), 1).create();
-            PdfDocument.Page page = document.startPage(pageInfo);
+        PdfDocument document = new PdfDocument();
 
-            Canvas canvas = page.getCanvas();
+        PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(b.getWidth(), b.getHeight(), 1).create();
+        PdfDocument.Page page = document.startPage(pageInfo);
 
-
-            Paint paint = new Paint();
-            paint.setColor(Color.parseColor("#ffffff"));
-            canvas.drawPaint(paint);
+        Canvas canvas = page.getCanvas();
 
 
-            Bitmap bitmap = Bitmap.createScaledBitmap(b, b.getWidth(), b.getHeight(), true);
+        Paint paint = new Paint();
+        paint.setColor(Color.parseColor("#ffffff"));
+        canvas.drawPaint(paint);
 
-            paint.setColor(Color.BLUE);
-            canvas.drawBitmap(bitmap, 0, 0, null);
-            document.finishPage(page);
-            filePath = new File(path);
-            try {
-                document.writeTo(new FileOutputStream(filePath));
-            } catch (IOException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "Something wrong: " + e.toString(), Toast.LENGTH_LONG).show();
-            }
 
-            // close the document
-            document.close();
+        Bitmap bitmap = Bitmap.createScaledBitmap(b, b.getWidth(), b.getHeight(), true);
 
-            //openPdf(path);
+        paint.setColor(Color.BLUE);
+        canvas.drawBitmap(bitmap, 0, 0, null);
+        document.finishPage(page);
+        filePath = new File(path);
+        try {
+            document.writeTo(new FileOutputStream(filePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Something wrong: " + e.toString(), Toast.LENGTH_LONG).show();
         }
+
+        // close the document
+        document.close();
+
+        //openPdf(path);
+    }
+
     private void viewPdf(String file) {
-Intent intent ;
-        File pdfFile = new File(Environment.getExternalStorageDirectory() + "/Signature/null" + file+".pdf");
+        Intent intent;
+        File pdfFile = new File(Environment.getExternalStorageDirectory() + "/Signature/null" + file + ".pdf");
   /*      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 
             Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".provider", pdfFile);
@@ -269,9 +257,8 @@ Intent intent ;
         startActivity(intent);*/
         // create new Intent
 
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("file://"+pdfFile.getAbsolutePath()));
-            startActivity(browserIntent);
-
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("file://" + pdfFile.getAbsolutePath()));
+        startActivity(browserIntent);
 
 
     }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.ora">
+    package="com.myorientation">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,7 +25,6 @@
         <activity
             android:name=".LoginPage"
             android:screenOrientation="portrait" />
-
 
 
         <activity
@@ -51,12 +51,9 @@
             android:screenOrientation="portrait" />
 
 
-
-
         <activity
             android:name=".StudentsList"
             android:screenOrientation="portrait" />
-
 
 
         <activity
@@ -64,12 +61,9 @@
             android:screenOrientation="portrait" />
 
 
-
-
         <activity
             android:name=".WaitingList"
             android:screenOrientation="portrait" />
-
 
 
     </application>

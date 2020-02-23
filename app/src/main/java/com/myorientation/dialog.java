@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -17,6 +17,6 @@ public class dialog extends AppCompatDialogFragment {
 
             }
         });
-       return alert.create();
+        return alert.create();
     }
 }

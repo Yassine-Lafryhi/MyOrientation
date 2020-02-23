@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -99,24 +99,6 @@ public class Statistics extends AppCompatActivity {
         pieChart.animateXY(5000, 5000);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         BarChart chart = findViewById(R.id.barchart);
 
         ArrayList flsBar = new ArrayList();
@@ -130,7 +112,7 @@ public class Statistics extends AppCompatActivity {
 
                 ResultSet numberOfStudents = Database.executeQuery("select COUNT(\"cne\")" +
                         "from ETUDIANT\n" +
-                        "where \"id_filiere\" = " + fil2.getString(1) +" and \"noteBac\" >= 12");
+                        "where \"id_filiere\" = " + fil2.getString(1) + " and \"noteBac\" >= 12");
 
                 flsBar.add(fil2.getString(2));
 
@@ -145,13 +127,11 @@ public class Statistics extends AppCompatActivity {
         }
 
 
-        BarDataSet bardataset = new BarDataSet(nstudents12Bar,"");
-         chart.animateY(5000);
-         BarData data = new BarData(flsBar, bardataset);
-         bardataset.setColors(ColorTemplate.JOYFUL_COLORS);
-         chart.setData(data);
-
-
+        BarDataSet bardataset = new BarDataSet(nstudents12Bar, "");
+        chart.animateY(5000);
+        BarData data = new BarData(flsBar, bardataset);
+        bardataset.setColors(ColorTemplate.JOYFUL_COLORS);
+        chart.setData(data);
 
 
 /**
@@ -163,34 +143,34 @@ public class Statistics extends AppCompatActivity {
 
 
 
-        LineChart lineChart = findViewById(R.id.LineChart);
-         ArrayList NoOfEmp3 = new ArrayList();
-         NoOfEmp3.add(new Entry(945f, 0));
-         NoOfEmp3.add(new Entry(1040f, 1));
-         NoOfEmp3.add(new Entry(1133f, 2));
-         NoOfEmp3.add(new Entry(1240f, 3));
-         NoOfEmp3.add(new Entry(1369f, 4));
-         NoOfEmp3.add(new Entry(1487f, 5));
-         NoOfEmp3.add(new Entry(1501f, 6));
-         NoOfEmp3.add(new Entry(1645f, 7));
-         NoOfEmp3.add(new Entry(1578f, 8));
-         NoOfEmp3.add(new Entry(1695f, 9));
-         LineDataSet dataSet3 = new LineDataSet(NoOfEmp3, "Number Of Employees");
-         ArrayList year3 = new ArrayList();
-         year3.add("2008");
-         year3.add("2009");
-         year3.add("2010");
-         year3.add("2011");
-         year3.add("2012");
-         year3.add("2013");
-         year3.add("2014");
-         year3.add("2015");
-         year3.add("2016");
-         year3.add("2017");
-         LineData data3 = new LineData(year3, dataSet3);
-         lineChart.setData(data3);
-         dataSet3.setColors(ColorTemplate.JOYFUL_COLORS);
-         lineChart.animateXY(5000, 5000);
+ LineChart lineChart = findViewById(R.id.LineChart);
+ ArrayList NoOfEmp3 = new ArrayList();
+ NoOfEmp3.add(new Entry(945f, 0));
+ NoOfEmp3.add(new Entry(1040f, 1));
+ NoOfEmp3.add(new Entry(1133f, 2));
+ NoOfEmp3.add(new Entry(1240f, 3));
+ NoOfEmp3.add(new Entry(1369f, 4));
+ NoOfEmp3.add(new Entry(1487f, 5));
+ NoOfEmp3.add(new Entry(1501f, 6));
+ NoOfEmp3.add(new Entry(1645f, 7));
+ NoOfEmp3.add(new Entry(1578f, 8));
+ NoOfEmp3.add(new Entry(1695f, 9));
+ LineDataSet dataSet3 = new LineDataSet(NoOfEmp3, "Number Of Employees");
+ ArrayList year3 = new ArrayList();
+ year3.add("2008");
+ year3.add("2009");
+ year3.add("2010");
+ year3.add("2011");
+ year3.add("2012");
+ year3.add("2013");
+ year3.add("2014");
+ year3.add("2015");
+ year3.add("2016");
+ year3.add("2017");
+ LineData data3 = new LineData(year3, dataSet3);
+ lineChart.setData(data3);
+ dataSet3.setColors(ColorTemplate.JOYFUL_COLORS);
+ lineChart.animateXY(5000, 5000);
 
 
 
@@ -202,24 +182,21 @@ public class Statistics extends AppCompatActivity {
 
 
 
-      RadarChart radarChart = findViewById(R.id.RadarChart);
-         ArrayList NoOfEmp4 = new ArrayList();
-         NoOfEmp4.add(new Entry(945f, 0));
-         NoOfEmp4.add(new Entry(1040f, 1));
-         NoOfEmp4.add(new Entry(1133f, 2));
-         RadarDataSet dataSet4 = new RadarDataSet(NoOfEmp4, "Number Of Employees");
-         ArrayList year4 = new ArrayList();
-         year4.add("2008");
-         year4.add("2009");
-         year4.add("2010");
-         RadarData data4 = new RadarData(year4, dataSet4);
-         radarChart.setData(data4);
-         dataSet4.setColors(ColorTemplate.JOYFUL_COLORS);
-         radarChart.animateXY(5000, 5000);
-
-
-
-**/
+ RadarChart radarChart = findViewById(R.id.RadarChart);
+ ArrayList NoOfEmp4 = new ArrayList();
+ NoOfEmp4.add(new Entry(945f, 0));
+ NoOfEmp4.add(new Entry(1040f, 1));
+ NoOfEmp4.add(new Entry(1133f, 2));
+ RadarDataSet dataSet4 = new RadarDataSet(NoOfEmp4, "Number Of Employees");
+ ArrayList year4 = new ArrayList();
+ year4.add("2008");
+ year4.add("2009");
+ year4.add("2010");
+ RadarData data4 = new RadarData(year4, dataSet4);
+ radarChart.setData(data4);
+ dataSet4.setColors(ColorTemplate.JOYFUL_COLORS);
+ radarChart.animateXY(5000, 5000);
+ **/
 
         //Database.connect();
 
@@ -278,9 +255,6 @@ e.printStackTrace();
         }
         return result;
     }
-
-
-
 
 
 }

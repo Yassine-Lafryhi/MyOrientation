@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -9,9 +9,11 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class logOpen extends AppCompatDialogFragment {
     String message;
-    public logOpen(String message){
-        this.message=message;
+
+    public logOpen(String message) {
+        this.message = message;
     }
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceStates) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -22,9 +24,8 @@ public class logOpen extends AppCompatDialogFragment {
             }
         });
 
-        return builder.create() ;
+        return builder.create();
     }
-
 
 
 }

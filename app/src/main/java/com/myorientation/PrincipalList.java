@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -472,7 +472,6 @@ public class PrincipalList extends AppCompatActivity {
 
 
                         try {
-//and ROWNUM <= 20 AND \"noteBac\"< 16 ");
 
                             ResultSet resultSet = Database.executeQuery("select \"cne\" , \"CIN\" , \"nom\", \"prenom\" , \"date_de_naissance\",\"noteBac\",\"annee_bac\" from ETUDIANT where \"id_filiere\" = (select \"id_filiere\" from FILIERE where \"nomfiliere\"='" + itemSElected1 + "') and ROWNUM <= 20 AND \"noteBac\">= 14 ORDER BY \"noteBac\" DESC");
 
@@ -602,7 +601,6 @@ public class PrincipalList extends AppCompatActivity {
     private void viewPdf(String file) {
         Intent intent;
         File pdfFile = new File(Environment.getExternalStorageDirectory() + "/Notes/" + file + ".pdf");
-
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("file://" + pdfFile.getAbsolutePath()));
         startActivity(browserIntent);
 
@@ -621,13 +619,9 @@ public class PrincipalList extends AppCompatActivity {
         alert.setTextColor(Color.parseColor(color));
         alert.startAnimation(animation);
         animation.setFillAfter(true);
-
-
         new CountDownTimer(visibilityTime, 1000) {
             public void onTick(long millisUntilFinished) {
-
             }
-
             public void onFinish() {
                 TranslateAnimation animation = new TranslateAnimation(0, 0, -140, 0);
                 animation.setDuration(600);

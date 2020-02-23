@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -64,8 +64,9 @@ public class WaitingList extends AppCompatActivity {
     private String signature_pdf_;
     String fileName;
 
-    String html="";
+    String html = "";
     String adminEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,10 +76,9 @@ public class WaitingList extends AppCompatActivity {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
         builder.detectFileUriExposure();
-        btnOuvrir= findViewById(R.id.ouvrir_pdf);
+        btnOuvrir = findViewById(R.id.ouvrir_pdf);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
 
 
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/font6.ttf");
@@ -99,9 +99,7 @@ public class WaitingList extends AppCompatActivity {
         }
 
 
-
-
-        TextView nomEtablissement ;
+        TextView nomEtablissement;
         String etablissement = null;
         final Intent intent = null;
 
@@ -109,10 +107,9 @@ public class WaitingList extends AppCompatActivity {
         try {
 
 
-
-            ResultSet resultSet = Database.executeQuery("select \"nometablissement\" from ETABLISSEMENT where ETABLISSEMENT.\"id_etablissement\" = (select FK_etablissement from ADMIN where \"email\" ='"+LoginPage.adminEmail+"')");
+            ResultSet resultSet = Database.executeQuery("select \"nometablissement\" from ETABLISSEMENT where ETABLISSEMENT.\"id_etablissement\" = (select FK_etablissement from ADMIN where \"email\" ='" + LoginPage.adminEmail + "')");
             resultSet.next();
-            etablissement= resultSet.getString(1);
+            etablissement = resultSet.getString(1);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -124,8 +121,7 @@ public class WaitingList extends AppCompatActivity {
         try {
 
 
-
-            ResultSet resultSet = Database.executeQuery("SELECT \"nomfiliere\" FROM \"FILIERE\" where FILIERE.\"id_etablissement\"=(select \"id_etablissement\" from ETABLISSEMENT where \"nometablissement\"='"+etablissement+"')");
+            ResultSet resultSet = Database.executeQuery("SELECT \"nomfiliere\" FROM \"FILIERE\" where FILIERE.\"id_etablissement\"=(select \"id_etablissement\" from ETABLISSEMENT where \"nometablissement\"='" + etablissement + "')");
             while (resultSet.next()) {
                 filieres.add(resultSet.getString(1));
 
@@ -152,6 +148,7 @@ public class WaitingList extends AppCompatActivity {
 
                 //Toast.makeText(StudentsList.this, filieres.get(position), Toast.LENGTH_LONG).show();
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -160,31 +157,25 @@ public class WaitingList extends AppCompatActivity {
 
 
         final String finalEtablissement = etablissement;
-        btnOuvrir.setOnClickListener(new View.OnClickListener(){
+        btnOuvrir.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                html="";
-                File l1 = new File(Environment.getExternalStorageDirectory()+"/Notes/liste.html");
-                File l2 = new File(Environment.getExternalStorageDirectory()+"/Notes/liste.pdf");
-                if(l1.exists()){
+                html = "";
+                File l1 = new File(Environment.getExternalStorageDirectory() + "/Notes/liste.html");
+                File l2 = new File(Environment.getExternalStorageDirectory() + "/Notes/liste.pdf");
+                if (l1.exists()) {
                     l1.delete();
                 }
 
-                if(l2.exists()){
+                if (l2.exists()) {
                     l2.delete();
                 }
                 showSnackBar("Préparation de fichier PDF ...", "#E91E63", 100);
 
 
-
-
-
-
-
 // votre list est en train de générer !
-
 
 
                 new CountDownTimer(200, 100) {
@@ -449,14 +440,14 @@ public class WaitingList extends AppCompatActivity {
                                 " <tr height=32 style='mso-height-source:userset;height:24.0pt'>\n" +
                                 "  <td height=32 class=xl70 style='height:24.0pt'></td>\n" +
                                 "  <td class=xl70></td>\n" +
-                                "  <td colspan=3 class=xl71>"+itemSElected1+"</td>\n" +
+                                "  <td colspan=3 class=xl71>" + itemSElected1 + "</td>\n" +
                                 "  <td class=xl70></td>\n" +
                                 "  <td class=xl70></td>\n" +
                                 " </tr>\n" +
                                 " <tr height=32 style='mso-height-source:userset;height:24.0pt'>\n" +
                                 "  <td height=32 class=xl70 style='height:24.0pt'></td>\n" +
                                 "  <td class=xl70></td>\n" +
-                                "  <td colspan=3 class=xl71>"+ date.toLocaleString()+"</td>\n" +
+                                "  <td colspan=3 class=xl71>" + date.toLocaleString() + "</td>\n" +
                                 "  <td class=xl70></td>\n" +
                                 "  <td class=xl70></td>\n" +
                                 " </tr>\n" +
@@ -483,7 +474,7 @@ public class WaitingList extends AppCompatActivity {
                         try {
 //and ROWNUM <= 20 AND \"noteBac\"< 16 ");
 
-                            ResultSet resultSet = Database.executeQuery("select \"cne\" , \"CIN\" , \"nom\", \"prenom\" , \"date_de_naissance\",\"noteBac\",\"annee_bac\" from ETUDIANT where \"id_filiere\" = (select \"id_filiere\" from FILIERE where \"nomfiliere\"='"+itemSElected1+"') AND \"noteBac\"< 14 ORDER BY \"noteBac\" DESC");
+                            ResultSet resultSet = Database.executeQuery("select \"cne\" , \"CIN\" , \"nom\", \"prenom\" , \"date_de_naissance\",\"noteBac\",\"annee_bac\" from ETUDIANT where \"id_filiere\" = (select \"id_filiere\" from FILIERE where \"nomfiliere\"='" + itemSElected1 + "') AND \"noteBac\"< 14 ORDER BY \"noteBac\" DESC");
 
 
                             while (resultSet.next()) {
@@ -496,21 +487,21 @@ public class WaitingList extends AppCompatActivity {
                                 String notebac = resultSet.getString(6);
                                 String anneebac = resultSet.getString(7);
 
-                                html+= " <tr height=21 style='height:16.0pt'>\n" +
-                                        "  <td height=21 class=xl72 style='height:16.0pt;border-top:none'>"+cne+"</td>\n" +
-                                        "  <td class=xl72 style='border-top:none;border-left:none'>"+cin+"</td>\n" +
-                                        "  <td class=xl72 style='border-top:none;border-left:none'>"+nom+"</td>\n" +
-                                        "  <td class=xl72 style='border-top:none;border-left:none'>"+prenom+"</td>\n" +
-                                        "  <td class=xl72 style='border-top:none;border-left:none'>"+dn.split(" ")[0]+"</td>\n" +
-                                        "  <td class=xl72 style='border-top:none;border-left:none'>"+notebac+"</td>\n" +
-                                        "  <td class=xl72 style='border-top:none;border-left:none'>"+anneebac+"</td>\n" +
-                                        " </tr>" ;
+                                html += " <tr height=21 style='height:16.0pt'>\n" +
+                                        "  <td height=21 class=xl72 style='height:16.0pt;border-top:none'>" + cne + "</td>\n" +
+                                        "  <td class=xl72 style='border-top:none;border-left:none'>" + cin + "</td>\n" +
+                                        "  <td class=xl72 style='border-top:none;border-left:none'>" + nom + "</td>\n" +
+                                        "  <td class=xl72 style='border-top:none;border-left:none'>" + prenom + "</td>\n" +
+                                        "  <td class=xl72 style='border-top:none;border-left:none'>" + dn.split(" ")[0] + "</td>\n" +
+                                        "  <td class=xl72 style='border-top:none;border-left:none'>" + notebac + "</td>\n" +
+                                        "  <td class=xl72 style='border-top:none;border-left:none'>" + anneebac + "</td>\n" +
+                                        " </tr>";
                             }
 
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        html+= " <![if supportMisalignedColumns]>\n" +
+                        html += " <![if supportMisalignedColumns]>\n" +
                                 " <tr height=0 style='display:none'>\n" +
                                 "  <td width=103 style='width:77pt'></td>\n" +
                                 "  <td width=83 style='width:62pt'></td>\n" +
@@ -539,9 +530,9 @@ public class WaitingList extends AppCompatActivity {
                          .fillParent(true)
                          .textAlign(Align.LEFT)
                          .show();**/
-                        generateNoteOnSD(WaitingList.this , "liste.html" , html);
+                        generateNoteOnSD(WaitingList.this, "liste.html", html);
                         try {
-                            createPdf(Environment.getExternalStorageDirectory()+"/Notes/liste.html",Environment.getExternalStorageDirectory()+"/saxmono.ttf",Environment.getExternalStorageDirectory()+"/Notes/liste.pdf");
+                            createPdf(Environment.getExternalStorageDirectory() + "/Notes/liste.html", Environment.getExternalStorageDirectory() + "/saxmono.ttf", Environment.getExternalStorageDirectory() + "/Notes/liste.pdf");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -555,9 +546,6 @@ public class WaitingList extends AppCompatActivity {
 
 
         });
-
-
-
 
 
     }
@@ -583,8 +571,8 @@ public class WaitingList extends AppCompatActivity {
     }
 
 
-
     public static final String FONT = "src/main/resources/fonts/cardo/Cardo-Regular.ttf";
+
     public void createPdf(String src, String font, String dest) throws IOException {
         ConverterProperties properties = new ConverterProperties();
         FontProvider fontProvider = new DefaultFontProvider();
@@ -593,6 +581,7 @@ public class WaitingList extends AppCompatActivity {
         properties.setFontProvider(fontProvider);
         HtmlConverter.convertToPdf(new File(src), new File(dest), properties);
     }
+
     public void generateNoteOnSD(Context context, String sFileName, String sBody) {
         try {
             File root = new File(Environment.getExternalStorageDirectory(), "Notes");
@@ -611,12 +600,11 @@ public class WaitingList extends AppCompatActivity {
     }
 
     private void viewPdf(String file) {
-        Intent intent ;
-        File pdfFile = new File(Environment.getExternalStorageDirectory() + "/Notes/" + file+".pdf");
+        Intent intent;
+        File pdfFile = new File(Environment.getExternalStorageDirectory() + "/Notes/" + file + ".pdf");
 
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("file://"+pdfFile.getAbsolutePath()));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("file://" + pdfFile.getAbsolutePath()));
         startActivity(browserIntent);
-
 
 
     }
@@ -633,8 +621,6 @@ public class WaitingList extends AppCompatActivity {
         alert.setTextColor(Color.parseColor(color));
         alert.startAnimation(animation);
         animation.setFillAfter(true);
-
-
         new CountDownTimer(visibilityTime, 1000) {
             public void onTick(long millisUntilFinished) {
 

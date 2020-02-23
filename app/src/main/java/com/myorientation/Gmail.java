@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -15,7 +15,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-class Gmail extends AsyncTask<Void,Void,Void>  {
+class Gmail extends AsyncTask<Void, Void, Void> {
 
     //Add those line in dependencies
     //implementation files('libs/activation.jar')
@@ -46,7 +46,7 @@ class Gmail extends AsyncTask<Void,Void,Void>  {
     protected void onPreExecute() {
         super.onPreExecute();
         //Show progress dialog while sending email
-        mProgressDialog = ProgressDialog.show(mContext,"Sending message", "Please wait...",false,false);
+        mProgressDialog = ProgressDialog.show(mContext, "Sending message", "Please wait...", false, false);
     }
 
     @Override
@@ -56,7 +56,7 @@ class Gmail extends AsyncTask<Void,Void,Void>  {
         mProgressDialog.dismiss();
 
         //Show success toast
-        Toast.makeText(mContext,"Message Sent",Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, "Message Sent", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -77,7 +77,7 @@ class Gmail extends AsyncTask<Void,Void,Void>  {
                 new javax.mail.Authenticator() {
                     //Authenticating the password
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(Utils.EMAIL, Utils.PASSWORD);
+                        return new PasswordAuthentication(Settings.email, Settings.password);
                     }
                 });
 
@@ -86,7 +86,7 @@ class Gmail extends AsyncTask<Void,Void,Void>  {
             MimeMessage mm = new MimeMessage(mSession);
 
             //Setting sender address
-            mm.setFrom(new InternetAddress(Utils.EMAIL));
+            mm.setFrom(new InternetAddress(Settings.email));
             //Adding receiver
             mm.addRecipient(Message.RecipientType.TO, new InternetAddress(mEmail));
             //Adding subject

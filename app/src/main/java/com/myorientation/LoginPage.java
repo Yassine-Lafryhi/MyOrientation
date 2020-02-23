@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -39,10 +39,7 @@ public class LoginPage extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/font6.ttf");
-
-
         RelativeLayout StartLayout = findViewById(R.id.Layout);
-
         ArrayList<View> clds = getAllChildren(StartLayout);
         for (int i = 0; i < clds.size(); i += 1) {
 

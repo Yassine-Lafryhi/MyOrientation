@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import java.sql.SQLException;
 import java.util.Random;
@@ -81,9 +81,9 @@ public class ForgetPassword extends AppCompatActivity {
         }
 
 
-        radioGroup =  findViewById(R.id.radiogroup);
-        radioTel =  findViewById(R.id.radioTel);
-        radioEmail =  findViewById(R.id.radioEmail);
+        radioGroup = findViewById(R.id.radiogroup);
+        radioTel = findViewById(R.id.radioTel);
+        radioEmail = findViewById(R.id.radioEmail);
         Button Send = findViewById(R.id.Validate);
         Send.setOnClickListener(new View.OnClickListener() {
 
@@ -223,9 +223,6 @@ public class ForgetPassword extends AppCompatActivity {
         }
         return result;
     }
-
-
-
 
 
 }

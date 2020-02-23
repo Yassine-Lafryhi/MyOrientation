@@ -1,4 +1,4 @@
-package me.ora;
+package com.myorientation;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -17,8 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class AdminDashboard extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +26,7 @@ public class AdminDashboard extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/font6.ttf");
-
-
         RelativeLayout StartLayout = findViewById(R.id.Layout);
-
         ArrayList<View> clds = getAllChildren(StartLayout);
         for (int i = 0; i < clds.size(); i += 1) {
 
@@ -43,51 +38,30 @@ public class AdminDashboard extends AppCompatActivity {
                 ((Button) clds.get(i)).setTypeface(custom_font);
             }
         }
-
-
         RelativeLayout Menu1 = findViewById(R.id.Menu1);
         RelativeLayout Menu2 = findViewById(R.id.Menu2);
         RelativeLayout Menu3 = findViewById(R.id.Menu3);
         RelativeLayout Menu4 = findViewById(R.id.Menu4);
-
-
         Button logOut = findViewById(R.id.LogOut);
-
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 startActivity(new Intent(AdminDashboard.this, LoginPage.class));
                 finish();
-
-
             }
         });
-
 
         Menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 startActivity(new Intent(AdminDashboard.this, Statistics.class));
-
-
-
             }
         });
-
 
         Menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 startActivity(new Intent(AdminDashboard.this, StudentsList.class));
-
-
-
             }
         });
 
@@ -100,7 +74,6 @@ public class AdminDashboard extends AppCompatActivity {
                 startActivity(new Intent(AdminDashboard.this, PrincipalList.class));
 
 
-
             }
         });
 
@@ -111,7 +84,6 @@ public class AdminDashboard extends AppCompatActivity {
 
 
                 startActivity(new Intent(AdminDashboard.this, WaitingList.class));
-
 
 
             }
