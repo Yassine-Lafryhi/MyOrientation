@@ -4,7 +4,6 @@
 ![](https://img.shields.io/badge/build-passing-brightgreen)
 ![](https://img.shields.io/badge/license-MIT-blue)
 ![](https://img.shields.io/badge/version-1.0-orange)
-
 ![](https://img.shields.io/badge/itextpdf-7.1.9-blue)
 ![](https://img.shields.io/badge/MPAndroidChart-2.2.4-purple)
 ![](https://img.shields.io/badge/CSnackbar-1.4.2-green)
