@@ -22,8 +22,13 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.splash_screen);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        new CountDownTimer(1900, 1000) {
+        new CountDownTimer(2000, 1000) {
             public void onTick(long millisUntilFinished) {
+                String databaseServerIP = getResources().getString(R.string.database_server_ip);
+                String databaseServerPort = getResources().getString(R.string.database_server_port);
+                String databaseUser = getResources().getString(R.string.database_user);
+                String databasePassword = getResources().getString(R.string.database_password);
+                Database.connect(databaseServerIP, databaseServerPort, databaseUser, databasePassword);
             }
 
             public void onFinish() {

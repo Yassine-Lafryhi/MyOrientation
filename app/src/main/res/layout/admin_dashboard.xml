@@ -7,66 +7,63 @@
     android:background="#F8F8F8">
 
     <ImageView
-        android:layout_marginTop="8dp"
         android:id="@+id/logo"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo_transparent"
-        />
+        android:layout_marginTop="8dp"
+        android:src="@drawable/logo_transparent" />
 
     <RelativeLayout
-        android:padding="6dp"
-        android:elevation="8dp"
         android:id="@+id/Menu1"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="10dp"
-        android:layout_alignParentLeft= "true"
-        android:background="@drawable/start">
+        android:background="@drawable/start"
+        android:elevation="8dp"
+        android:padding="6dp">
 
         <ImageView
             android:id="@+id/img_menu1"
             android:layout_width="120dp"
-            android:layout_centerHorizontal="true"
             android:layout_height="120dp"
-            android:src="@drawable/presentation_team"/>
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/presentation_team" />
+
         <TextView
-            android:layout_below="@id/img_menu1"
             android:layout_width="320dp"
             android:layout_height="50dp"
+            android:layout_below="@id/img_menu1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="6dp"
             android:elevation="4dp"
             android:enabled="false"
-            android:textStyle="bold"
             android:gravity="center"
             android:text="Students \nStatistics"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="22dp" />
-
-
+            android:textSize="22dp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
 
 
-
     <RelativeLayout
-        android:padding="6dp"
-        android:elevation="8dp"
         android:id="@+id/Menu2"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
-        android:layout_marginRight="14dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
-        android:background="@drawable/start">
+        android:layout_marginRight="14dp"
+        android:background="@drawable/start"
+        android:elevation="8dp"
+        android:padding="6dp">
 
         <ImageView
             android:id="@+id/img_menu2"
@@ -74,45 +71,44 @@
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/personal_data_1" />
+
         <TextView
-            android:layout_below="@id/img_menu2"
             android:layout_width="320dp"
             android:layout_height="50dp"
+            android:layout_below="@id/img_menu2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="6dp"
             android:elevation="4dp"
             android:enabled="false"
-            android:textStyle="bold"
             android:gravity="center"
             android:text="Students \nList"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="22dp" />
-
-
+            android:textSize="22dp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
 
 
     <RelativeLayout
-        android:padding="6dp"
-        android:elevation="8dp"
         android:id="@+id/Menu3"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/Menu1"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="10dp"
-        android:layout_alignParentLeft= "true"
-        android:background="@drawable/start">
+        android:background="@drawable/start"
+        android:elevation="8dp"
+        android:padding="6dp">
 
         <ImageView
             android:id="@+id/img_menu3"
             android:layout_width="120dp"
-            android:layout_centerHorizontal="true"
             android:layout_height="120dp"
-            android:src="@drawable/complete_task_1"/>
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/complete_task_1" />
 
         <TextView
             android:layout_width="320dp"
@@ -130,23 +126,20 @@
             android:textStyle="bold" />
 
 
-
-
     </RelativeLayout>
 
 
-
     <RelativeLayout
-        android:padding="6dp"
-        android:elevation="8dp"
         android:id="@+id/Menu4"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/Menu2"
-        android:layout_marginRight="14dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
-        android:background="@drawable/start">
+        android:layout_marginRight="14dp"
+        android:background="@drawable/start"
+        android:elevation="8dp"
+        android:padding="6dp">
 
         <ImageView
             android:id="@+id/img_menu4"
@@ -172,23 +165,20 @@
     </RelativeLayout>
 
 
-
     <Button
         android:id="@+id/LogOut"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_below="@id/Menu4"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/logout_button"
         android:elevation="4dp"
         android:text="Log Out"
-        android:layout_centerHorizontal="true"
         android:textAllCaps="false"
         android:textColor="#fff"
         android:textSize="26dp" />
-
-
 
 
 </RelativeLayout>

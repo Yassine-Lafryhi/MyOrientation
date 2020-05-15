@@ -7,151 +7,149 @@
     android:background="#F8F8F8">
 
     <ImageView
-        android:layout_marginTop="8dp"
         android:id="@+id/logo"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
         android:src="@drawable/logo_transparent" />
 
 
     <RelativeLayout
-        android:padding="6dp"
-        android:elevation="8dp"
         android:id="@+id/Menu1"
         android:layout_width="320dp"
         android:layout_height="160dp"
         android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/start">
+        android:background="@drawable/start"
+        android:elevation="8dp"
+        android:padding="6dp">
 
         <ImageView
             android:id="@+id/img_menu1"
             android:layout_width="80dp"
-            android:layout_centerHorizontal="true"
             android:layout_height="80dp"
-            android:src="@drawable/presentation_team"/>
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/presentation_team" />
+
         <TextView
             android:id="@+id/l1"
-            android:layout_below="@id/img_menu1"
             android:layout_width="320dp"
             android:layout_height="30dp"
+            android:layout_below="@id/img_menu1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="6dp"
             android:elevation="4dp"
             android:enabled="false"
-            android:textStyle="bold"
             android:gravity="center"
             android:text="العربية"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="22dp" />
+            android:textSize="22dp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
+
     <Button
 
         android:id="@+id/LogIn"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_below="@id/Menu1"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="-26dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/select_lang"
         android:elevation="8dp"
         android:text="اختيار"
-        android:layout_centerHorizontal="true"
         android:textAllCaps="false"
         android:textColor="#fff"
         android:textSize="26dp" />
 
 
-<!--
-    <RelativeLayout
-        android:padding="6dp"
-        android:elevation="8dp"
-        android:id="@+id/Menu2"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Menu1"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/start">
-
-        <ImageView
-            android:id="@+id/img_menu2"
-            android:layout_width="80dp"
-            android:layout_centerHorizontal="true"
-            android:layout_height="80dp"
-            android:src="@drawable/presentation_team"/>
-        <TextView
-            android:layout_below="@id/img_menu2"
+    <!--
+        <RelativeLayout
+            android:padding="6dp"
+            android:elevation="8dp"
+            android:id="@+id/Menu2"
             android:layout_width="320dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:elevation="4dp"
-            android:enabled="false"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="English"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="22dp" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Menu1"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/start">
+
+            <ImageView
+                android:id="@+id/img_menu2"
+                android:layout_width="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="80dp"
+                android:src="@drawable/presentation_team"/>
+            <TextView
+                android:layout_below="@id/img_menu2"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:elevation="4dp"
+                android:enabled="false"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="English"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="22dp" />
 
 
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
 
 
-    <RelativeLayout
-        android:padding="6dp"
-        android:elevation="8dp"
-        android:id="@+id/Menu4"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Menu2"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/start">
-
-        <ImageView
-            android:id="@+id/img_menu3"
-            android:layout_width="80dp"
-            android:layout_centerHorizontal="true"
-            android:layout_height="80dp"
-            android:src="@drawable/presentation_team"/>
-        <TextView
-            android:layout_below="@id/img_menu3"
+        <RelativeLayout
+            android:padding="6dp"
+            android:elevation="8dp"
+            android:id="@+id/Menu4"
             android:layout_width="320dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:elevation="4dp"
-            android:enabled="false"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="Français"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="22dp" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Menu2"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/start">
+
+            <ImageView
+                android:id="@+id/img_menu3"
+                android:layout_width="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="80dp"
+                android:src="@drawable/presentation_team"/>
+            <TextView
+                android:layout_below="@id/img_menu3"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:elevation="4dp"
+                android:enabled="false"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Français"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="22dp" />
 
 
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
--->
-
-
-
-
+    -->
 
 
 </RelativeLayout>

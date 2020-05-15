@@ -1,19 +1,13 @@
 package com.myorientation;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
@@ -27,15 +21,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.chootdev.csnackbar.Align;
-import com.chootdev.csnackbar.Duration;
-import com.chootdev.csnackbar.Snackbar;
-import com.chootdev.csnackbar.Type;
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
@@ -44,28 +32,17 @@ import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.layout.font.FontProvider;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 
-
 public class PrincipalList extends AppCompatActivity {
     Spinner filiereSpinner;
     String itemSElected1;
     Button btnOuvrir;
-    Bitmap b;
-    String path;
-    File folder;
-    File file;
-    File filePath;
-    private String signature_pdf_;
-    String fileName;
-
     String html = "";
-    String adminEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +78,6 @@ public class PrincipalList extends AppCompatActivity {
 
         TextView nomEtablissement;
         String etablissement = null;
-        final Intent intent = null;
 
         nomEtablissement = findViewById(R.id.nomEtablissement);
         try {
@@ -117,7 +93,6 @@ public class PrincipalList extends AppCompatActivity {
 
 
         final ArrayList<String> filieres = new ArrayList<>();
-//        intent.putExtra("filiere", itemSElected1);
         try {
 
 
@@ -134,7 +109,7 @@ public class PrincipalList extends AppCompatActivity {
         }
 
 
-        filiereSpinner = (Spinner) findViewById(R.id.filiereAdmin);
+        filiereSpinner = findViewById(R.id.filiereAdmin);
 
         ArrayAdapter filiereAdapter = new ArrayAdapter<>(PrincipalList.this, R.layout.support_simple_spinner_dropdown_item, filieres);
         filiereSpinner.setAdapter(filiereAdapter);
@@ -143,10 +118,7 @@ public class PrincipalList extends AppCompatActivity {
         filiereSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 itemSElected1 = filieres.get(position).toString();
-
-                //Toast.makeText(StudentsList.this, filieres.get(position), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -173,11 +145,6 @@ public class PrincipalList extends AppCompatActivity {
                     l2.delete();
                 }
                 showSnackBar("Préparation de fichier PDF ...", "#E91E63", 100);
-
-
-// votre list est en train de générer !
-
-
                 new CountDownTimer(200, 100) {
                     public void onTick(long millisUntilFinished) {
 
@@ -599,14 +566,10 @@ public class PrincipalList extends AppCompatActivity {
     }
 
     private void viewPdf(String file) {
-        Intent intent;
         File pdfFile = new File(Environment.getExternalStorageDirectory() + "/Notes/" + file + ".pdf");
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("file://" + pdfFile.getAbsolutePath()));
         startActivity(browserIntent);
-
-
     }
-
 
     public void showSnackBar(String message, String color, int visibilityTime) {
         final TextView alert = findViewById(R.id.Alert);
@@ -622,6 +585,7 @@ public class PrincipalList extends AppCompatActivity {
         new CountDownTimer(visibilityTime, 1000) {
             public void onTick(long millisUntilFinished) {
             }
+
             public void onFinish() {
                 TranslateAnimation animation = new TranslateAnimation(0, 0, -140, 0);
                 animation.setDuration(600);

@@ -30,7 +30,7 @@
         android:text=""
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 
@@ -57,7 +57,7 @@
             android:text="Registration Receipt"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="28dp" />
+            android:textSize="28sp" />
 
 
         <TextView
@@ -70,7 +70,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <TextView
@@ -83,7 +83,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <TextView
@@ -96,7 +96,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <TextView
@@ -109,7 +109,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <TextView
@@ -122,7 +122,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
 
@@ -136,7 +136,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
 
@@ -150,7 +150,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <TextView
@@ -163,7 +163,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/Sector"
@@ -175,7 +175,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <TextView
@@ -188,7 +188,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/Email"
@@ -200,7 +200,7 @@
             android:gravity="center"
             android:text="Phone Number :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <Button
@@ -216,7 +216,7 @@
             android:text="Print"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="26dp" />
+            android:textSize="26sp" />
 
 
     </RelativeLayout>

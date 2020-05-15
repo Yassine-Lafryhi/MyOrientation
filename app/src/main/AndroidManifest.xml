@@ -33,7 +33,7 @@
 
 
         <activity
-            android:name=".FillingInformations"
+            android:name=".FillingInformation"
             android:screenOrientation="portrait" />
 
 

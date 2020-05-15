@@ -5,17 +5,17 @@ import java.sql.*;
 public class Database {
     public static Connection connection = null;
 
-    public static void connect() {
+    public static void connect(String databaseServerIP, String databaseServerPort, String databaseUser, String databasePassword) {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            connection = DriverManager.getConnection("jdbc:oracle:thin:@" + Settings.serverIP + ":" + Settings.serverPort + "/XE", Settings.user, Settings.password);
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@" + databaseServerIP + ":" + databaseServerPort + "/XE", databaseUser, databasePassword);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static ResultSet executeQuery(String query) throws SQLException {
-        Statement stmt = null;
+        Statement stmt;
         ResultSet resultSet = null;
         try {
             stmt = connection.createStatement();

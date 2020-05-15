@@ -28,15 +28,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ForgetPassword extends AppCompatActivity {
-    boolean SuggestedWordListenerJustStarted = true;
-    public static int CurrentQuestion = 1;
-    public static int CurrentLevel = 1;
-    public static int LevelQuestionsNumber = 50;
-    public static int[] LevelsDurations = {16, 12, 8};
-    CountDownTimer WaitingTheWordCountDownTimer;
-    CountDownTimer QuestionCountDownTimer;
-    int WaitingTheWordCounter = 1;
-
     EditText mEmail;
     EditText mTel;
     String mMessage;
@@ -108,16 +99,14 @@ public class ForgetPassword extends AppCompatActivity {
                     }
 
                     if (radioTel.getId() == radiochecked) {
-                        Log.d("estsb", "212" + phone);
                         Document doc = null;
                         try {
                             doc = Jsoup.connect("https://rest.nexmo.com/sms/json").ignoreContentType(true)
                                     .data("from", "MY ORIENTATION")
                                     .data("text", "Your new password is:" + mMessage)
                                     .data("to", "212" + phone)
-                                    .data("api_key", "9c4546f1")
-                                    .data("api_secret", "0KgDtJ5a2DsScdDx")
-                                    // and other hidden fields which are being passed in post request.
+                                    .data("api_key", getResources().getString(R.string.nexmo_api_key))
+                                    .data("api_secret", getResources().getString(R.string.nexmo_api_secret))
                                     .userAgent("Mozilla")
                                     .post();
                         } catch (IOException e) {
@@ -136,13 +125,13 @@ public class ForgetPassword extends AppCompatActivity {
     }
 
     public void openDialog() {
-        logOpen exampleDialog = new logOpen(" shoisissez sms or email");
-        exampleDialog.show(getSupportFragmentManager(), "message d'erreur");
+        //logOpen exampleDialog = new logOpen(" shoisissez sms or email");
+        //exampleDialog.show(getSupportFragmentManager(), "message d'erreur");
     }
 
     public void message() {
-        logOpen exampleDialog = new logOpen("entrer numéro de tél et email");
-        exampleDialog.show(getSupportFragmentManager(), "message d'erreur");
+        //logOpen exampleDialog = new logOpen("entrer numéro de tél et email");
+        //exampleDialog.show(getSupportFragmentManager(), "message d'erreur");
     }
 
     private void sendMail() {
@@ -150,9 +139,9 @@ public class ForgetPassword extends AppCompatActivity {
         String mail = mEmail.getText().toString().trim();
         String message = mMessage;
         String subject = mSubject;
-
-        //Send Mail
-        Gmail javaMailAPI = new Gmail(this, mail, subject, "your new password is:" + message);
+        String email = getResources().getString(R.string.email);
+        String password = getResources().getString(R.string.password);
+        Gmail javaMailAPI = new Gmail(this, email, password, mail, subject, "your new password is:" + message);
 
         javaMailAPI.execute();
 
@@ -160,7 +149,7 @@ public class ForgetPassword extends AppCompatActivity {
 
     private static String generateRandomPassword(int max_length, boolean upperCase, boolean lowerCase, boolean numbers, boolean specialCharacters) {
         String upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+        String lowerCaseChars = upperCaseChars.toLowerCase();
         String numberChars = "0123456789";
         String specialChars = "!@#$%^&*[]()_-+=<>?/{}~|";
         String allowedChars = "";
@@ -168,8 +157,6 @@ public class ForgetPassword extends AppCompatActivity {
         Random rn;
         rn = new Random();
         StringBuilder sb = new StringBuilder(max_length);
-
-        //this will fulfill the requirements of atleast one character of a type.
         if (upperCase) {
             allowedChars += upperCaseChars;
             sb.append(upperCaseChars.charAt(rn.nextInt(upperCaseChars.length() - 1)));
@@ -190,8 +177,6 @@ public class ForgetPassword extends AppCompatActivity {
             sb.append(specialChars.charAt(rn.nextInt(specialChars.length() - 1)));
         }
 
-
-        //fill the allowed length from different chars now.
         for (int i = sb.length(); i < max_length; ++i) {
             sb.append(allowedChars.charAt(rn.nextInt(allowedChars.length())));
         }

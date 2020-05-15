@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
 
     <RelativeLayout
@@ -57,7 +57,7 @@
             android:text="Liste Principale"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="28dp" />
+            android:textSize="28sp" />
 
 
         <TextView
@@ -73,7 +73,7 @@
             android:textStyle="bold"
             android:text="Hi dear student, if this is your first loging in to the application, please use your by uppercase, after signing in you must change it"
             android:textColor="#E91E63"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
 
 
@@ -92,7 +92,7 @@
             android:textStyle="bold"
             android:text="Veuillez sélectionner la filière :"
             android:textColor="#009688"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
 
@@ -106,7 +106,7 @@
             android:gravity="center"
             android:text="Veuillez sélectionner la filière :"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <Spinner
@@ -141,7 +141,7 @@
             android:layout_centerHorizontal="true"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="26dp" />
+            android:textSize="26sp" />
 
 
 

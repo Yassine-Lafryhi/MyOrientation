@@ -32,7 +32,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class FillingInformations<simpleSpinner> extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class FillingInformation<simpleSpinner> extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Spinner etablissementSpinner, filiereSpinner;
     TextView textPopup;
     EditText editTextNom, editTextPrenom, editTextCin, editTextCne, editTextEtablissement, editTextDateNaissance, editTextNoteBac, editTextDateBac, editTextFiliere, editTextTel, editTextEmail;
@@ -46,7 +46,7 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.filling_informations);
+        setContentView(R.layout.filling_information);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/font6.ttf");
@@ -73,29 +73,28 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
             public void onClick(View v) {
 
 
-                if (editTextNom.getText().toString().isEmpty() || editTextPrenom.getText().toString().isEmpty() || editTextCin.getText().toString().isEmpty() || editTextCne.getText().toString().isEmpty() || editTextDateNaissance.getText().toString().isEmpty() || editTextNoteBac.getText().toString().isEmpty() || editTextDateBac.getText().toString().isEmpty() || editTextTel.getText().toString().isEmpty() || editTextTel.getText().toString().isEmpty())
-                /**Snackbar.with(FillingInformations.this,null)
-                 .type(Type.ERROR)
-                 .message("Quelque informations manquantes ! faites attention!! ")
-                 .duration(Duration.LONG)
-                 .fillParent(true)
-                 .textAlign(Align.LEFT)
-                 .show();**/
-
+                if (editTextNom.getText().toString().isEmpty() || editTextPrenom.getText().toString().isEmpty()
+                        || editTextCin.getText().toString().isEmpty() || editTextCne.getText().toString().isEmpty()
+                        || editTextDateNaissance.getText().toString().isEmpty() || editTextNoteBac.getText().toString().isEmpty()
+                        || editTextDateBac.getText().toString().isEmpty() || editTextTel.getText().toString().isEmpty()
+                        || editTextTel.getText().toString().isEmpty()) {
                     showSnackBar("Rien pour enregistrer !", "#FFC107", 1500);
-                else
+                } else {
 
-                    openDialog();
+                    //openDialog();}
+                }
             }
         });
-        btnEnregistrer = (Button) findViewById(R.id.enregistrer);
+        btnEnregistrer = (Button)
+
+                findViewById(R.id.enregistrer);
         btnEnregistrer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText[] arrayOfEditTexts = {editTextNom, editTextPrenom, editTextCin, editTextCne, editTextEtablissement, editTextDateNaissance, editTextNoteBac, editTextDateBac, editTextFiliere, editTextTel, editTextEmail};
 
                 if (editTextNom.getText().toString().isEmpty() || editTextPrenom.getText().toString().isEmpty() || editTextCin.getText().toString().isEmpty() || editTextCne.getText().toString().isEmpty() || editTextDateNaissance.getText().toString().isEmpty() || editTextNoteBac.getText().toString().isEmpty() || editTextDateBac.getText().toString().isEmpty() || editTextTel.getText().toString().isEmpty() || editTextTel.getText().toString().isEmpty())
-                    Snackbar.with(FillingInformations.this, null)
+                    Snackbar.with(FillingInformation.this, null)
                             .type(Type.ERROR)
                             .message("Quelque informations manquantes ! faites attention!! ")
                             .duration(Duration.LONG)
@@ -118,7 +117,7 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
                     // String filierevalue= editTextFiliere.getText().toString();
                     String telvalue = editTextTel.getText().toString();
                     String emailvalue = editTextEmail.getText().toString();
-                    Intent intent = new Intent(FillingInformations.this, GenerateCopy.class);
+                    Intent intent = new Intent(FillingInformation.this, GenerateCopy.class);
                     intent.putExtra("nom", nomvalue);
                     intent.putExtra("prenom", prenomvalue);
                     intent.putExtra("cin", cinvalue);
@@ -161,7 +160,6 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
         final ArrayList<String> filieres = new ArrayList<>();
         try {
 
-            Database.connect();
             ResultSet resultSet = Database.executeQuery("SELECT \"nometablissement\" FROM \"ETABLISSEMENT\"");
             while (resultSet.next()) {
                 etablissements.add(resultSet.getString(1));
@@ -169,13 +167,11 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
 
             }
 
-        } catch (Exception e) {
+        } catch (
+                Exception e) {
             e.printStackTrace();
         }
         try {
-
-
-            Database.connect();
             ResultSet resultSet = Database.executeQuery("SELECT \"nomfiliere\" FROM \"FILIERE\"");
             while (resultSet.next()) {
                 filieres.add(resultSet.getString(1));
@@ -184,23 +180,31 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
             }
 
 
-        } catch (Exception e) {
+        } catch (
+                Exception e) {
             e.printStackTrace();
         }
-        etablissementSpinner = (Spinner) findViewById(R.id.etablissement);
-        filiereSpinner = (Spinner) findViewById(R.id.filiere);
+
+        etablissementSpinner = (Spinner)
+
+                findViewById(R.id.etablissement);
+
+        filiereSpinner = (Spinner)
+
+                findViewById(R.id.filiere);
 
 
-        ArrayAdapter etablissementAdapter = new ArrayAdapter<>(FillingInformations.this, R.layout.support_simple_spinner_dropdown_item, etablissements);
+        ArrayAdapter etablissementAdapter = new ArrayAdapter<>(FillingInformation.this, R.layout.support_simple_spinner_dropdown_item, etablissements);
 
-        ArrayAdapter filiereAdapter = new ArrayAdapter<>(FillingInformations.this, R.layout.support_simple_spinner_dropdown_item, filieres);
+        ArrayAdapter filiereAdapter = new ArrayAdapter<>(FillingInformation.this, R.layout.support_simple_spinner_dropdown_item, filieres);
         etablissementSpinner.setAdapter(etablissementAdapter);
         filiereSpinner.setAdapter(filiereAdapter);
 
         etablissementSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Toast.makeText(FillingInformations.this, etablissements.get(position), Toast.LENGTH_LONG).show();
+            public void onItemSelected(AdapterView<?> parent, View view, int position,
+                                       long id) {
+                // Toast.makeText(FillingInformation.this, etablissements.get(position), Toast.LENGTH_LONG).show();
                 itemSElected1 = etablissements.get(position).toString();
 
 
@@ -214,12 +218,13 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
 
         filiereSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position,
+                                       long id) {
 
                 itemSElected2 = filieres.get(position).toString();
 
 
-                // Toast.makeText(FillingInformations.this, filieres.get(position), Toast.LENGTH_LONG).show();
+                // Toast.makeText(FillingInformation.this, filieres.get(position), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -231,7 +236,8 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
         RelativeLayout StartLayout = findViewById(R.id.Layout);
 
         ArrayList<View> clds = getAllChildren(StartLayout);
-        for (int i = 0; i < clds.size(); i += 1) {
+        for (
+                int i = 0; i < clds.size(); i += 1) {
 
             if (clds.get(i) instanceof TextView) {
                 ((TextView) clds.get(i)).setTypeface(custom_font);
@@ -277,41 +283,6 @@ public class FillingInformations<simpleSpinner> extends AppCompatActivity implem
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
-
-    /* public void btn(View view) {
-         final AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
-         View myView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
-         Button btnRetour = myView.findViewById(R.id.retour);
-         Button btnOk= myView.findViewById(R.id.ok);
-         alert.setView(textPopup);
-         final AlertDialog alertDialog = alert.create();
-         alertDialog.setCanceledOnTouchOutside(false);
-         btnRetour.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 alertDialog.dismiss();
-             }
-         });
-         btnOk.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 alertDialog.dismiss();
-             }
-         });
-     }*/
-    public void openDialog() {
-        dialog popup = new dialog();
-        popup.show(getSupportFragmentManager(), "Be Careful");
-    }
-  /*  public  boolean isAllEditTextCorrect(EditText [] e ){
-        for(int i=0 ; i<e.length; i++){
-            if (e[i].getText().toString().isEmpty() ||e[i].getText().toString().startsWith(" ") || e[i].getText().toString().endsWith(" ") )
-                return false;
-        }
-        return true;
-    }*/
-
 
     public void showSnackBar(String message, String color, int visibilityTime) {
         final TextView alert = findViewById(R.id.Alert);

@@ -15,13 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.chootdev.csnackbar.Duration;
-import com.chootdev.csnackbar.Snackbar;
-import com.chootdev.csnackbar.Type;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,11 +46,6 @@ public class LoginPage extends AppCompatActivity {
                 ((Button) clds.get(i)).setTypeface(custom_font);
             }
         }
-
-
-        Database.connect();
-
-
         final EditText email = findViewById(R.id.Email);
         final EditText password = findViewById(R.id.Password);
 
@@ -77,9 +67,6 @@ public class LoginPage extends AppCompatActivity {
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // Toast.makeText(getApplicationContext(), "Connecting ...", Toast.LENGTH_LONG).show();
-
                 try {
 
 
@@ -107,7 +94,7 @@ public class LoginPage extends AppCompatActivity {
                                         }
 
                                         public void onFinish() {
-                                            startActivity(new Intent(LoginPage.this, FillingInformations.class));
+                                            startActivity(new Intent(LoginPage.this, FillingInformation.class));
 
                                             finish();
                                         }
@@ -153,9 +140,7 @@ public class LoginPage extends AppCompatActivity {
                                     showSnackBar("The informations are incorrect !", "#E91E63", 2000);
                                 }
                             } else {
-                                //Toast.makeText(getApplicationContext(), "The informations are incorrect !", Toast.LENGTH_LONG).show();
                                 showSnackBar("The informations are incorrect !", "#E91E63", 2000);
-
                             }
 
 
@@ -163,10 +148,8 @@ public class LoginPage extends AppCompatActivity {
                             showSnackBar("The given email is invalid !", "#FFC107", 2000);
                         }
                     } else {
-
                         showSnackBar("Please fill in all the blanks correctly !", "#FFC107", 2000);
                     }
-
 
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -204,7 +187,7 @@ public class LoginPage extends AppCompatActivity {
         final TextView alert = findViewById(R.id.Alert);
         alert.bringToFront();
         alert.setBackground(getDrawable(R.drawable.error_alert));
-        TranslateAnimation animation = new TranslateAnimation(0, 0, 0, -140);
+        TranslateAnimation animation = new TranslateAnimation(0, 0, 0, -180);
         animation.setDuration(600);
         alert.setElevation(18);
         alert.setText(message);
@@ -226,11 +209,5 @@ public class LoginPage extends AppCompatActivity {
             }
         }.start();
     }
-
-
-    /** @Override public void onBackPressed() {
-
-    }**/
-
 
 }

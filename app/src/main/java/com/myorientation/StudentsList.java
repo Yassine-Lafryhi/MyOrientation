@@ -1,19 +1,13 @@
 package com.myorientation;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
@@ -27,7 +21,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +37,6 @@ import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.layout.font.FontProvider;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -116,7 +108,6 @@ public class StudentsList extends AppCompatActivity {
 
 
         final ArrayList<String> filieres = new ArrayList<>();
-//        intent.putExtra("filiere", itemSElected1);
         try {
 
             ResultSet resultSet = Database.executeQuery("SELECT \"nomfiliere\" FROM \"FILIERE\" where FILIERE.\"id_etablissement\"=(select \"id_etablissement\" from ETABLISSEMENT where \"nometablissement\"='" + etablissement + "')");
@@ -132,7 +123,7 @@ public class StudentsList extends AppCompatActivity {
         }
 
 
-        filiereSpinner = (Spinner) findViewById(R.id.filiereAdmin);
+        filiereSpinner = findViewById(R.id.filiereAdmin);
 
         ArrayAdapter filiereAdapter = new ArrayAdapter<>(StudentsList.this, R.layout.support_simple_spinner_dropdown_item, filieres);
         filiereSpinner.setAdapter(filiereAdapter);
@@ -141,10 +132,7 @@ public class StudentsList extends AppCompatActivity {
         filiereSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 itemSElected1 = filieres.get(position).toString();
-
-                //Toast.makeText(StudentsList.this, filieres.get(position), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -152,7 +140,6 @@ public class StudentsList extends AppCompatActivity {
 
             }
         });
-        Database.connect();
 
         final String finalEtablissement = etablissement;
         btnOuvrir.setOnClickListener(new View.OnClickListener() {
@@ -170,7 +157,6 @@ public class StudentsList extends AppCompatActivity {
                 if (l2.exists()) {
                     l2.delete();
                 }
-                // showSnackBar("Préparation de fichier PDF ...", "#E91E63", 100);
 
                 Snackbar.with(StudentsList.this, null)
                         .type(Type.SUCCESS)
@@ -180,8 +166,6 @@ public class StudentsList extends AppCompatActivity {
                         .textAlign(Align.LEFT)
                         .show();
 
-
-// votre list est en train de générer !
 
 
                 new CountDownTimer(200, 100) {

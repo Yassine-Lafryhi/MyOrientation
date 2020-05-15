@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.myorientation"
         minSdkVersion 21
@@ -24,10 +24,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
     implementation 'com.chootdev:csnackbar:1.4.2'
-    implementation 'org.jsoup:jsoup:1.12.1'
+    implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'com.sun.mail:android-mail:1.5.5'
     implementation 'com.sun.mail:android-activation:1.5.5'
     implementation "com.itextpdf:barcodes:7.1.9"

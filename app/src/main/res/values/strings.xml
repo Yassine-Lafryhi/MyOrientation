@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">My Orientation</string>
+    <string name="log_in">Log In</string>
+    <string name="email_text">Email :</string>
+    <string name="please_enter_your_email_here">Please enter your email</string>
+    <string name="password_text">Password :</string>
+    <string name="please_enter_your_password_here">Please enter your password here</string>
+    <string name="log_in_2">Log In</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="hi_dear">Hi dear teacher/student if this is your first loging in to the application, please use your Massar code as an email, and your CIN as password, after signing in you must change the password !</string>
+    <string name="please_fill_in">Please fill in the fields with your information :</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="phone_number">Phone Number :</string>
+    <string name="please_enter_your_phone_number_here">Please enter your phone number</string>
+    <string name="receive_new_password_by">Receive New Password by :</string>
+    <string name="validate">Validate</string>
 </resources>

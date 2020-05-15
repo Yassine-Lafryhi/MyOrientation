@@ -1,19 +1,13 @@
 package com.myorientation;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
@@ -27,15 +21,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chootdev.csnackbar.Align;
-import com.chootdev.csnackbar.Duration;
-import com.chootdev.csnackbar.Snackbar;
-import com.chootdev.csnackbar.Type;
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
@@ -44,7 +33,6 @@ import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.layout.font.FontProvider;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -117,7 +105,6 @@ public class WaitingList extends AppCompatActivity {
 
 
         final ArrayList<String> filieres = new ArrayList<>();
-//        intent.putExtra("filiere", itemSElected1);
         try {
 
 
@@ -146,7 +133,6 @@ public class WaitingList extends AppCompatActivity {
 
                 itemSElected1 = filieres.get(position).toString();
 
-                //Toast.makeText(StudentsList.this, filieres.get(position), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -173,10 +159,6 @@ public class WaitingList extends AppCompatActivity {
                     l2.delete();
                 }
                 showSnackBar("Préparation de fichier PDF ...", "#E91E63", 100);
-
-
-// votre list est en train de générer !
-
 
                 new CountDownTimer(200, 100) {
                     public void onTick(long millisUntilFinished) {

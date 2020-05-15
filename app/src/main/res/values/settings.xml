@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="database_server_ip">172.20.10.2</string>
+    <string name="database_server_port">1521</string>
+    <string name="database_user">system</string>
+    <string name="database_password">oracle</string>
+    <string name="email">email@gmail.com</string>
+    <string name="password">password</string>
+    <string name="nexmo_api_key">key</string>
+    <string name="nexmo_api_secret">secret</string>
+</resources>

@@ -10,8 +10,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:id="@+id/logo"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/complete_task_1" />
@@ -31,14 +31,14 @@
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
 
     <RelativeLayout
         android:elevation="8dp"
         android:id="@+id/FirstPlayerPart"
         android:layout_width="340dp"
-        android:layout_height="440dp"
+        android:layout_height="430dp"
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
         android:background="@drawable/start">
@@ -54,15 +54,13 @@
             android:elevation="4dp"
             android:enabled="false"
             android:gravity="center"
-            android:text="Filling Informations"
+            android:text="Filling Information"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="28dp" />
+            android:textSize="28sp" />
 
 
         <TextView
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
             android:id="@+id/Infos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,10 +68,12 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:textStyle="bold"
-            android:text="Hi dear student, if this is your first loging in to the application, please use your by uppercase, after signing in you must change it"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="Please enter your information :"
             android:textColor="#E91E63"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:textStyle="bold" />
 
 
 
@@ -95,7 +95,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="Nom :"
+                    android:text="First Name :"
                     android:textColor="#000000"
                     android:textSize="24dp" />
 
@@ -106,19 +106,19 @@
 
                     android:layout_width="320dp"
                     android:layout_height="50dp"
-                    android:gravity="center"
-                    android:elevation="2dp"
-                    android:background="@drawable/input"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
-
                     android:layout_below="@id/nomText"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="24dp"
-                    android:hint="Veuillez entrez votre nom"
+                    android:background="@drawable/input"
+
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:hint="Please enter your first name"
                     android:inputType="text"
-                    android:selectAllOnFocus="true" />
+                    android:selectAllOnFocus="true"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/prenomText"
@@ -128,7 +128,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="Prénom :"
+                    android:text="Last Name :"
                     android:textColor="#000000"
                     android:textSize="24dp" />
 
@@ -136,18 +136,18 @@
                     android:id="@+id/prenom"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
-                    android:gravity="center"
-                    android:elevation="2dp"
-                    android:background="@drawable/input"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
                     android:layout_below="@id/prenomText"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
-                    android:hint="Veuillez entrez votre prénom"
+                    android:background="@drawable/input"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:hint="Please enter your last name"
                     android:inputType="text"
-                    android:selectAllOnFocus="true"/>
+                    android:selectAllOnFocus="true"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/cinText"
@@ -157,7 +157,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="CIN :"
+                    android:text="National Identity Code :"
                     android:textColor="#000000"
                     android:textSize="24dp" />
 
@@ -165,21 +165,21 @@
                     android:id="@+id/cin"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
-                    android:gravity="center"
-                    android:elevation="2dp"
-                    android:background="@drawable/input"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
                     android:layout_below="@id/cinText"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
-                    android:hint="Veuillez entrez votre CIN"
+                    android:background="@drawable/input"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:hint="Please enter your identity code"
                     android:inputType="text"
                     android:selectAllOnFocus="true"
-                    
-                    
-                     />
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+
+
+                    />
 
                 <TextView
                     android:id="@+id/cneText"
@@ -189,7 +189,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="CNE :"
+                    android:text="Student Id :"
                     android:textColor="#000000"
                     android:textSize="24dp" />
 
